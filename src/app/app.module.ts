@@ -3,16 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ViewAllComponent } from './view-all/view-all.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import{HttpClientModule} from '@angular/common/http'
+import { EmployeeService } from './employee.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViewAllComponent,
+    AddEmployeeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
