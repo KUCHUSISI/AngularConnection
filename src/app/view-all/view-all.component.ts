@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup,FormGroupDirective,ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormControlDirective, FormControlName, FormGroup,FormGroupDirective,ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { error } from 'protractor';
 import { Observable } from 'rxjs';
@@ -49,16 +49,15 @@ location:''
      //console.log(response)
     this.employee1=response
     console.log(this.employee1)
-
-   });
-  
+   },error=>{ console.log(error)
+   })
   }
   employeeupdateform=new FormGroup({
     id:new FormControl(),
     name:new FormControl(),
     location:new FormControl()
   });
-  updateEmploy(updemp:any):void
+  updateEmploy():void
   {
     alert("hello")
     this.employee=new Employee();
