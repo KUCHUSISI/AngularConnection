@@ -29,31 +29,32 @@
   <div id="modal" class="w3-modal">
     <div class="w3-modal-content">
       <div class="w3-container">
-                <form [formGroup]="employeeupdateform" (ngSubmit)="updateEmploy()">  
+                <form [formGroup]="employeeupdateform" (ngSubmit)="updateEmploy()" role="form">  
                     <div class="w3-modal-header">  
                       <h4 class="w3-modal-title" style="text-align: center">Update Employee</h4>  
                     </div>  
                     <div class="w3-modal-body"> 
                       <tr var employee=JSON.parse(employee1)>   
-                                  <div class="form-group">  
-                                  <label for="name">Id</label>   
-                                  <input type="text" class="input"  formControlName="id" required [(ngModel)]="employee.id"  > 
-                                  </div>
-                                  <div class="form-group">  
-                                  <label for="name">Name</label>  
-                                  <input type="text" class="input"  formControlName="name" required [(ngModel)]="employee.name"  >  
-                                  </div>  
-                                  <div class="form-group">  
-                                  <label for="name">Location</label>  
-                                  <input type="text" class="input" formControlName="location" required [(ngModel)]="employee.location">  
-                                  </div>         
+                        <label for="id">Id</label> 
+                        <div class="form-group">  
+                            <input type="text"  formControlName="id" required [(ngModel)]="employee.id"  placeholder="Enter Id"/> 
+                        </div>
+                        <label for="name">Name</label> 
+                        <div class="form-group">  
+                            <input type="text"   formControlName="name" required [(ngModel)]="employee.name"  placeholder="Enter Name"/>
+                        </div>
+                        <label for="location">Location</label>  
+                        <div class="form-group">  
+                          <input type="text"  formControlName="location" required [(ngModel)]="employee.location"  placeholder="Enter Location"/>
+                        </div>        
                       </tr>
                     </div>         
-                 </form>  
+                 
                  <div class="w3-modal-footer" >  
-                  <button type="submit" class="w3-button w3-green w3-display-middlemiddle">Update</button>
+                  <input type="submit" class="w3-button w3-green w3-display-middlemiddle" value="Update">
                   <button type="button" onclick="document.getElementById('modal').style.display='none'" class="w3-button w3-red w3-display-bottomright">Close</button>
                 </div>  
+              </form>  
             </div>  
           </div>  
         </div>  

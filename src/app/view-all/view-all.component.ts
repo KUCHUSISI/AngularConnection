@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormControlDirective, FormControlName, FormGroup,FormGroupDirective,ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormControlDirective, FormControlName, FormGroup,FormGroupDirective,ReactiveFormsModule ,FormBuilder} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { error } from 'protractor';
-import { Observable } from 'rxjs';
-import { runInThisContext } from 'vm';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
 
@@ -46,13 +43,12 @@ location:''
   updateEmployee(id:any)
   {
    this.es.getEmployee(id).subscribe(response=>{
-     //console.log(response)
-    this.employee1=response
+   this.employee1=response
     console.log(this.employee1)
    },error=>{ console.log(error)
    })
   }
-  employeeupdateform=new FormGroup({
+  employeeupdateform=new FormGroup({    
     id:new FormControl(),
     name:new FormControl(),
     location:new FormControl()
